@@ -19,7 +19,7 @@ export const personalInfoSchema = z.object({
     )
     .refine(
       (file) => !file || file.size <= 1024 * 1024 * 4,
-      "File must be lass then 4MB",
+      "File must be less then 4MB",
     ),
   firstName: optionalString,
   lastName: optionalString,
@@ -30,7 +30,7 @@ export const personalInfoSchema = z.object({
   email: optionalString,
 });
 
-export type personalInfoValues = z.infer<typeof personalInfoSchema>;
+export type PersonalInfoValues = z.infer<typeof personalInfoSchema>;
 
 export const workExperienceSchema = z.object({
   workExperiences: z
@@ -46,7 +46,7 @@ export const workExperienceSchema = z.object({
     .optional(),
 });
 
-export type WorkExperiencesValues = z.infer<typeof workExperienceSchema>;
+export type WorkExperienceValues = z.infer<typeof workExperienceSchema>;
 
 export const educationSchema = z.object({
   educations: z
@@ -82,6 +82,8 @@ export const resumeSchema = z.object({
   ...educationSchema.shape,
   ...skillsSchema.shape,
   ...summarySchema.shape,
+  colorHex: optionalString,
+  borderStyle: optionalString,
 });
 
 export type ResumeValues = Omit<z.infer<typeof resumeSchema>, "photo"> & {
