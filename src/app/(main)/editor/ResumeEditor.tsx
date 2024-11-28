@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import { ResumeValues } from "@/lib/validation";
 import { useSearchParams } from "next/navigation";
@@ -57,6 +56,7 @@ export default function ResumeEditor() {
           <ResumePreviewSection
             resumeData={resumeData}
             setResumeData={setResumeData}
+            className={cn(showSmResumePreview && "flex")}
           />
         </div>
       </main>
