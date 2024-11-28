@@ -57,7 +57,6 @@ export default function ResumeEditor() {
           <ResumePreviewSection
             resumeData={resumeData}
             setResumeData={setResumeData}
-            className={cn(showSmResumePreview && "flex")}
           />
         </div>
       </main>

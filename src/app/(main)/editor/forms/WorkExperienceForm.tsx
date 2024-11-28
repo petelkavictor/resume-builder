@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { EditorFormProps } from "@/lib/types";
-import { workExperienceSchema, WorkExperiencesValues } from "@/lib/validation";
+import { workExperienceSchema, WorkExperienceValues } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { GripHorizontal } from "lucide-react";
 import { useEffect } from "react";
@@ -21,7 +21,7 @@ export default function WorkExperienceForm({
   resumeData,
   setResumeData,
 }: EditorFormProps) {
-  const form = useForm<WorkExperiencesValues>({
+  const form = useForm<WorkExperienceValues>({
     resolver: zodResolver(workExperienceSchema),
     defaultValues: {
       workExperiences: resumeData.workExperiences || [],
@@ -87,7 +87,7 @@ export default function WorkExperienceForm({
 }
 
 interface WorkExperienceItemProps {
-  form: UseFormReturn<WorkExperiencesValues>;
+  form: UseFormReturn<WorkExperienceValues>;
   index: number;
   remove: (index: number) => void;
 }
