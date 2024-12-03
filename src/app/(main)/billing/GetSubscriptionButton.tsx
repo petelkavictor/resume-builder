@@ -4,7 +4,6 @@ import { auth } from "@clerk/nextjs/server";
 import { formatDate } from "date-fns";
 import { Metadata } from "next";
 import Stripe from "stripe";
-
 import GetSubscriptionButton from "./GetSubscriptionButton";
 import ManageSubscriptionButton from "./ManageSubscriptionButton";
 
